@@ -1,3 +1,4 @@
+// app/layout.tsx
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import { cn } from "@/lib/utils";
@@ -5,6 +6,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import BlotterWrapper from "@/components/BlotterWrapper";
+import { BlotterScripts } from "@/components/BlotterScripts";
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -28,19 +31,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <BlotterScripts />
+      </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-6xl m-auto",
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
+        <BlotterWrapper />
         <Providers>
-          <main>{children}</main>
+          {children}
         </Providers>
       </body>
     </html>
