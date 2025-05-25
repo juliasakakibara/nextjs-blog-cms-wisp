@@ -1,3 +1,4 @@
+// components/BlotterText.tsx
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -8,140 +9,118 @@ declare global {
   }
 }
 
-function useBlotter() {
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    const checkBlotter = () => {
-      if (typeof window !== 'undefined' && window.Blotter) {
-        setIsReady(true);
-        return true;
-      }
-      return false;
-    };
-
-    if (checkBlotter()) return;
-
-    const interval = setInterval(() => {
-      if (checkBlotter()) {
-        clearInterval(interval);
-      }
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return isReady;
-}
-
-interface BlotterTextProps {
-  text: string;
-  className?: string;
-  fontSize?: number;
-  color?: string;
-  speed?: number;
-  volatility?: number;
-  seed?: number;
+function easeInOutQuad(t: number): number {
+  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 }
 
 export default function BlotterText({ 
   text, 
-  className = '', 
-  fontSize = 60,
-  color = '#000000',
-  speed = 0.3,
+  speed = 0.2,
   volatility = 0.1,
-  seed = 0.1
-}: BlotterTextProps) {
+  duration = 800,
+  alwaysOn = false,
+  className = ''
+}: any) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const blotterRef = useRef<any>(null);
-  const isBlotterReady = useBlotter();
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const animationRef = useRef<number | null>(null);
+  const materialRef = useRef<any>(null);
+  const [blotterError, setBlotterError] = useState(false);
 
+  // Animação com easing
+  const animate = (start: number, end: number, onUpdate: (value: number) => void) => {
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+
+    const startTime = performance.now();
+    const update = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeInOutQuad(progress);
+      const value = start + (end - start) * eased;
+      
+      onUpdate(value);
+      
+      if (progress < 1) {
+        animationRef.current = requestAnimationFrame(update);
+      }
+    };
+    animationRef.current = requestAnimationFrame(update);
+  };
+
+  // Efeito para o hover
   useEffect(() => {
-    if (!isBlotterReady || !containerRef.current) return;
-
-    console.log('Initializing Blotter...');
+    if (!materialRef.current || blotterError) return;
     
-    let isMounted = true;
-    let blotterInstance: any = null;
+    const targetValue = isHovered || alwaysOn ? volatility : 0;
+    const currentValue = materialRef.current.uniforms.uVolatility.value;
+    
+    animate(currentValue, targetValue, (value) => {
+      materialRef.current.uniforms.uVolatility.value = value;
+    });
+  }, [isHovered, alwaysOn, volatility, blotterError]);
+
+  // Efeito para inicialização
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.Blotter || !containerRef.current || blotterError) {
+      return;
+    }
+
+    // Limpa o container
+    if (containerRef.current) {
+      containerRef.current.innerHTML = '';
+    }
 
     try {
-      // Cria o texto
       const textObj = new window.Blotter.Text(text, {
         family: 'sans-serif',
-        size: fontSize,
-        fill: color,
-        paddingLeft: 20,
-        paddingRight: 20
+        size: 64,
+        fill: 'currentColor',
+        paddingLeft: 10,
+        paddingRight: 10
       });
 
-      // Cria o material
       const material = new window.Blotter.LiquidDistortMaterial();
       material.uniforms.uSpeed.value = speed;
-      material.uniforms.uVolatility.value = volatility;
-      material.uniforms.uSeed.value = seed;
+      material.uniforms.uVolatility.value = alwaysOn ? volatility : 0;
+      material.uniforms.uSeed.value = 0.1;
+      
+      materialRef.current = material;
 
-      // Cria o Blotter
-      blotterInstance = new window.Blotter(material, { 
+      const blotter = new window.Blotter(material, { 
         texts: textObj 
       });
 
-      const scope = blotterInstance.forText(textObj);
-      blotterRef.current = blotterInstance;
-      
-      // Adiciona ao DOM
+      const scope = blotter.forText(textObj);
       scope.appendTo(containerRef.current);
-      setIsInitialized(true);
 
     } catch (error) {
-      console.error('Error initializing Blotter:', error);
-      // Fallback
-      if (isMounted && containerRef.current) {
+      console.error('Error initializing Blotter. Falling back to static text.', error);
+      setBlotterError(true);
+      if (containerRef.current) {
         containerRef.current.textContent = text;
-        containerRef.current.style.fontSize = `${fontSize}px`;
-        containerRef.current.style.color = color;
       }
     }
 
-    // Limpeza
     return () => {
-      isMounted = false;
-      if (blotterRef.current) {
-        try {
-          // Remove os elementos do DOM primeiro
-          if (containerRef.current) {
-            containerRef.current.innerHTML = '';
-          }
-          // O Blotter não tem um método destroy, então apenas removemos a referência
-          blotterRef.current = null;
-        } catch (e) {
-          console.error('Error cleaning up Blotter:', e);
-        }
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isBlotterReady, text, fontSize, color, speed, volatility, seed]);
+  }, [text, speed, alwaysOn, volatility, blotterError]);
+
+  // Se houve erro, retorna apenas o texto estático
+  if (blotterError) {
+    return <span className={className}>{text}</span>;
+  }
 
   return (
-    <div 
-      ref={containerRef} 
-      className={className}
-      style={{ 
-        display: 'inline-block',
-        overflow: 'hidden'
-      }}
-    >
-      {!isInitialized && (
-        <div 
-          style={{ 
-            fontSize: `${fontSize}px`, 
-            color,
-            visibility: 'hidden'
-          }}
-        >
-          {text}
-        </div>
-      )}
-    </div>
+    <span
+      ref={containerRef}
+      className={`inline-block ${className}`}
+      onMouseEnter={() => !alwaysOn && setIsHovered(true)}
+      onMouseLeave={() => !alwaysOn && setIsHovered(false)}
+    />
   );
 }

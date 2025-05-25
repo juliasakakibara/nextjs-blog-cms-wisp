@@ -6,7 +6,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import BlotterWrapper from "@/components/BlotterWrapper";
 import { BlotterScripts } from "@/components/BlotterScripts";
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -45,7 +44,6 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <BlotterWrapper />
         <Providers>
           {children}
         </Providers>

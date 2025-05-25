@@ -1,35 +1,40 @@
+// components/Hero.tsx
 'use client';
 
 import dynamic from 'next/dynamic';
 
-// Importação dinâmica do BlotterText para evitar problemas com SSR
+// Importação dinâmica do BlotterText com SSR desativado
 const BlotterText = dynamic(
   () => import('@/components/BlotterText'),
-  { ssr: false, loading: () => <div className="h-32">Carregando...</div> }
+  { 
+    ssr: false,
+    loading: () => <span>Carregando...</span>
+  }
 );
 
 export function Hero() {
   return (
-    <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
-              <BlotterText 
-                text="Julia Sakakibara" 
-                fontSize={80}
-                color="#000000"
-                speed={0.3}
-                volatility={0.15}
-                seed={0.2}
-                className="block w-full"
-              />
-            </h1>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              Desenvolvedora e entusiasta de tecnologia
-            </p>
-          </div>
-        </div>
+    <section className="relative w-full py-20">
+      <div className="container px-4 mx-auto text-center">
+        <h1 className="mb-6 text-4xl font-bold md:text-6xl">
+          <BlotterText 
+            text="Julia Sakakibara" 
+            speed={0.2}
+            volatility={0.08}
+            duration={800}
+            className="block"
+          />
+        </h1>
+        
+        <p className="mb-8 text-xl text-gray-600">
+          <BlotterText 
+            text="Desenvolvedora e entusiasta de tecnologia" 
+            speed={0.15}
+            volatility={0.05}
+            duration={600}
+            className="inline-block"
+          />
+        </p>
       </div>
     </section>
   );
