@@ -2,6 +2,7 @@
 
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import type { GetRelatedPostsResult } from "@wisp-cms/client";
+import { config } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
 import type { FunctionComponent } from "react";
@@ -24,7 +25,7 @@ export const RelatedPosts: FunctionComponent<{
             <Link href={`/blog/${post.slug}`}>
               <AspectRatio ratio={16 / 9} className="w-full">
                 <Image
-                  src={post.image || "/images/placeholder.webp"}
+                  src={post.image || config.content.placeholderImage}
                   alt={post.title}
                   fill
                   className="h -full min-h-full min-w-full object-cover object-center"
