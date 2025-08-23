@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { wisp } from "@/lib/wisp";
+import { config } from "@/config";
 import { CommentForm } from "./CommentForm";
 import { CommentList } from "./CommentList";
 
@@ -16,7 +17,7 @@ export function CommentSection({ slug }: CommentSectionProps) {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>{config.content.loadingText}</div>;
   }
 
   if (!data?.config.enabled) {
@@ -25,9 +26,13 @@ export function CommentSection({ slug }: CommentSectionProps) {
 
   return (
     <div className="my-8">
-      <h2 className="mb-8 text-2xl font-bold tracking-tight">Add Comments</h2>
+      <h2 className="mb-8 text-2xl font-bold tracking-tight">
+        {config.comments.addCommentsTitle}
+      </h2>
       <CommentForm slug={slug} config={data.config} />
-      <h2 className="mb-8 mt-16 text-2xl font-bold tracking-tight">Comments</h2>
+      <h2 className="mb-8 mt-16 text-2xl font-bold tracking-tight">
+        {config.comments.commentsListTitle}
+      </h2>
       <CommentList
         comments={data.comments}
         pagination={data.pagination}
