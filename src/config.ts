@@ -66,6 +66,17 @@ const buildConfig = () => {
     ogImageHeight: parseInt(process.env.NEXT_PUBLIC_OG_IMAGE_HEIGHT || "630"),
   };
 
+  // Hero tokens
+  const heroTokens = {
+    title: process.env.NEXT_PUBLIC_HERO_TITLE || "hacker space.",
+    subtitle: process.env.NEXT_PUBLIC_HERO_SUBTITLE || "Building lasting connections with your audience is our mission. We infuse creativity into every touchpoint, whether it's customer experience, relationship management, or commerce.",
+    enabled: process.env.NEXT_PUBLIC_HERO_ENABLED !== "false",
+    paddingY: {
+      mobile: process.env.NEXT_PUBLIC_HERO_PADDING_Y_MOBILE || "py-20",
+      desktop: process.env.NEXT_PUBLIC_HERO_PADDING_Y_DESKTOP || "py-40",
+    },
+  };
+
   return {
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
     blog: {
