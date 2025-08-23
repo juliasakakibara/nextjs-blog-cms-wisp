@@ -12,17 +12,16 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
+
 interface MenuItem {
   name: string;
   href: string;
   openInNewTab?: boolean;
 }
-const menuItems: MenuItem[] = [
-  { name: "Blog", href: "/" },
-  { name: "About", href: "/about" },
-];
+
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
+  const menuItems: MenuItem[] = config.navigation.menuItems;
 
   return (
     <nav>
@@ -73,10 +72,23 @@ export const Navigation: FunctionComponent = () => {
 };
 
 export const Header: FunctionComponent = () => {
+  const headerClasses = cn(
+    "flex items-center justify-between",
+    config.header.marginTop.mobile,
+    `md:${config.header.marginTop.desktop}`,
+    config.header.marginBottom
+  );
+
+  const titleClasses = cn(
+    config.header.titleSize.mobile,
+    `md:${config.header.titleSize.desktop}`,
+    "font-bold tracking-tighter leading-tight"
+  );
+
   return (
-    <section className="flex items-center justify-between mt-8 md:mt-16 mb-12">
+    <section className={headerClasses}>
       <Link href="/">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
+        <h1 className={titleClasses}>
           {config.blog.name}
         </h1>
       </Link>
