@@ -47,7 +47,7 @@ npm run dev
 
 ### 🎨 Layout e Design
 
-| Token | Padrão | Op��ões | Descrição |
+| Token | Padrão | Opções | Descrição |
 |-------|--------|--------|-----------|
 | `NEXT_PUBLIC_MAX_WIDTH` | "6xl" | xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl | Largura máxima do container |
 | `NEXT_PUBLIC_CONTAINER_PADDING` | "2rem" | Qualquer valor CSS | Padding interno do container |
@@ -148,6 +148,19 @@ NEXT_PUBLIC_BLOG_DESCRIPTION=Receitas autênticas de todos os cantos do mundo
 NEXT_PUBLIC_MENU_ITEMS=[{"name":"Receitas","href":"/"},{"name":"Sobre","href":"/about"},{"name":"Contato","href":"/contact"}]
 NEXT_PUBLIC_COMMENTS_TITLE_ADD=Compartilhe sua Experiência
 NEXT_PUBLIC_COMMENTS_TITLE_LIST=Experiências dos Leitores
+NEXT_PUBLIC_HERO_TITLE=Sabores Autênticos.
+NEXT_PUBLIC_HERO_SUBTITLE=Descubra receitas tradicionais de todo o mundo, com ingredientes frescos e técnicas milenares que transformam cada refeição em uma experiência única.
+```
+
+### Blog Tech/Startup
+```env
+NEXT_PUBLIC_BLOG_DISPLAY_NAME=TechVision
+NEXT_PUBLIC_BLOG_COPYRIGHT=TechVision Inc.
+NEXT_DEFAULT_METADATA_DEFAULT_TITLE=TechVision - Innovation & Insights
+NEXT_PUBLIC_BLOG_DESCRIPTION=Leading insights on technology trends and startup culture
+NEXT_PUBLIC_HERO_TITLE=Building Tomorrow.
+NEXT_PUBLIC_HERO_SUBTITLE=We explore cutting-edge technologies and share insights that drive innovation, helping entrepreneurs and developers stay ahead of the curve.
+NEXT_PUBLIC_SHOW_WISP_BRANDING=false
 ```
 
 ## 🔧 Customização Avançada
