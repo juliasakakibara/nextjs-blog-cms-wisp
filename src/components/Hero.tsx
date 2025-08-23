@@ -10,19 +10,19 @@ interface HeroProps {
 }
 
 export const Hero: FunctionComponent<HeroProps> = ({
-  title = "hacker space.",
-  subtitle = "Building lasting connections with your audience is our mission. We infuse creativity into every touchpoint, whether it's customer experience, relationship management, or commerce.",
+  title = config.hero.title,
+  subtitle = config.hero.subtitle,
   className,
 }) => {
+  const sectionClasses = cn(
+    "relative w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-32",
+    config.hero.paddingY.mobile,
+    `lg:${config.hero.paddingY.desktop}`,
+    className
+  );
+
   return (
-    <section 
-      className={cn(
-        "relative w-full py-20 md:py-32 lg:py-40",
-        "flex flex-col items-center justify-center",
-        "px-4 md:px-8 lg:px-32",
-        className
-      )}
-    >
+    <section className={sectionClasses}>
       <div className="max-w-6xl mx-auto w-full flex flex-col items-center gap-10 md:gap-16">
         {/* Main Title */}
         <h1 className={cn(
