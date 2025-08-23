@@ -103,6 +103,7 @@ const buildConfig = () => {
     header: headerTokens,
     footer: footerTokens,
     seo: seoTokens,
+    hero: heroTokens,
   };
 };
 
