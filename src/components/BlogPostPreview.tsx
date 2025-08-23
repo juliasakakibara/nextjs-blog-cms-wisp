@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { GetPostsResult } from "@/lib/wisp";
+import { config } from "@/config";
 import { formatDate } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +17,7 @@ export const BlogPostPreview: FunctionComponent<{
           <Image
             alt={post.title}
             className="object-cover"
-            src={post.image || "/images/placeholder.webp"}
+            src={post.image || config.content.placeholderImage}
             fill
           />
         </div>
