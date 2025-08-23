@@ -47,7 +47,7 @@ npm run dev
 
 ### 🎨 Layout e Design
 
-| Token | Padrão | Opções | Descrição |
+| Token | Padrão | Op��ões | Descrição |
 |-------|--------|--------|-----------|
 | `NEXT_PUBLIC_MAX_WIDTH` | "6xl" | xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl | Largura máxima do container |
 | `NEXT_PUBLIC_CONTAINER_PADDING` | "2rem" | Qualquer valor CSS | Padding interno do container |
@@ -96,6 +96,16 @@ npm run dev
 | `NEXT_PUBLIC_FOOTER_MARGIN_TOP_DESKTOP` | "mt-16" | Qualquer classe Tailwind | Margem superior desktop |
 | `NEXT_PUBLIC_FOOTER_MARGIN_BOTTOM` | "mb-12" | Qualquer classe Tailwind | Margem inferior |
 | `NEXT_PUBLIC_FOOTER_SHOW_YEAR` | "true" | true/false | Mostrar ano no copyright |
+
+### 🎯 Hero Section
+
+| Token | Padrão | Opções | Descrição |
+|-------|--------|--------|-----------|
+| `NEXT_PUBLIC_HERO_ENABLED` | "true" | true/false | Habilitar seção hero na página inicial |
+| `NEXT_PUBLIC_HERO_TITLE` | "hacker space." | Qualquer texto | Título principal da seção hero |
+| `NEXT_PUBLIC_HERO_SUBTITLE` | "Building lasting connections..." | Qualquer texto | Subtítulo/descrição da seção hero |
+| `NEXT_PUBLIC_HERO_PADDING_Y_MOBILE` | "py-20" | Qualquer classe Tailwind | Padding vertical mobile |
+| `NEXT_PUBLIC_HERO_PADDING_Y_DESKTOP` | "py-40" | Qualquer classe Tailwind | Padding vertical desktop |
 
 ### 🔍 SEO
 
