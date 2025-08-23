@@ -24,7 +24,7 @@ export const RelatedPosts: FunctionComponent<{
             <Link href={`/blog/${post.slug}`}>
               <AspectRatio ratio={16 / 9} className="w-full">
                 <Image
-                  src={post.image || "https://cdn.builder.io/api/v1/image/assets%2F0dd7736ddb354a8d8ee9db94e956c016%2F873c806a7888493aa03f2877c910a519"}
+                  src={post.image || "/images/placeholder.webp"}
                   alt={post.title}
                   fill
                   className="h -full min-h-full min-w-full object-cover object-center"
