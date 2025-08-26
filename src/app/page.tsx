@@ -3,6 +3,7 @@ import { BlogPostsPagination } from "@/components/BlogPostsPagination";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { config } from "@/config";
 import { wisp } from "@/lib/wisp";
 
 const Page = async (
@@ -16,13 +17,9 @@ const Page = async (
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
-        <Hero />
-        <div className="container mx-auto px-5 mb-10 mt-16">
-          <BlogPostsPreview posts={result.posts} />
-          <BlogPostsPagination pagination={result.pagination} />
-        </div>
-      </main>
+      {config.hero.enabled && <Hero />}
+      <BlogPostsPreview posts={result.posts} />
+      <BlogPostsPagination pagination={result.pagination} />
       <Footer />
     </div>
   );

@@ -7,11 +7,12 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { config } from "@/config";
 
 export const BlogPostsPagination = ({
   pagination,
   basePath = "/?page=",
-  numSiblingPages = 2,
+  numSiblingPages = config.content.paginationSiblings,
 }: {
   basePath?: string;
   numSiblingPages?: number;

@@ -8,6 +8,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { BlotterScripts } from "@/components/BlotterScripts";
 
+// Dynamic font loading based on config
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
     images: [
       signOgImageUrl({
         title: config.blog.name,
+        width: config.seo.ogImageWidth,
+        height: config.seo.ogImageHeight,
       }),
     ],
   },
@@ -32,8 +35,17 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}>) {
+  // Dynamic container classes based on configuration
+  const containerClasses = cn(
+    "min-h-screen bg-background font-sans antialiased m-auto",
+    `max-w-${config.layout.maxWidth}`,
+    fontSans.variable
+  );
+
   return (
+    <html lang={config.layout.language}>
+      <body className={containerClasses}>
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <BlotterScripts />
@@ -45,7 +57,9 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          {children}
+          <main style={{ padding: config.layout.containerPadding }}>
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
