@@ -21,7 +21,7 @@ cp .env.template .env.local
 
 2. Configure as variáveis obrigatórias:
 ```env
-NEXT_PUBLIC_BLOG_ID=seu-blog-id-do-wisp
+NEXT_PUBLIC_BLOG_ID=8f050144-c250-4342-b909-00d1febf9138
 ```
 
 3. Personalize os tokens conforme sua necessidade.
