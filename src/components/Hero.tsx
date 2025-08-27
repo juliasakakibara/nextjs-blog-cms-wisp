@@ -25,8 +25,8 @@ export const Hero: FunctionComponent<HeroProps> = ({
           <div className="flex flex-col items-start">
             <h1 className={cn(
               "font-bold",
-              "text-4xl sm:text-5xl md:text-6xl lg:text-[76px]",
-              "leading-[1] lg:leading-[76px]",
+              "text-[40px] sm:text-[53px] md:text-[66px] lg:text-[84px]",
+              "leading-[1] lg:leading-[84px]",
               "text-foreground",
               "tracking-[-0.05em] lg:tracking-[-0.06em]"
             )}>
