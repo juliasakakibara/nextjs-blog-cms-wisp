@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang={config.layout.language}>
       <body className={containerClasses}>
         <Providers>
-          <main style={{ padding: config.layout.containerPadding }}>
+          <main>
             {children}
           </main>
         </Providers>
