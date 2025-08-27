@@ -20,7 +20,10 @@ interface MenuItem {
   openInNewTab?: boolean;
 }
 
-const useScrollDirection = () => {
+export const Navigation: FunctionComponent = () => {
+  const pathname = usePathname();
+
+      const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
@@ -48,10 +51,6 @@ const useScrollDirection = () => {
 
   return scrollDirection;
 };
-
-export const Navigation: FunctionComponent = () => {
-  const pathname = usePathname();
-
   // Menu items configurados
   const menuItems: MenuItem[] = [
     { name: "/feature projects", href: "#work" },
