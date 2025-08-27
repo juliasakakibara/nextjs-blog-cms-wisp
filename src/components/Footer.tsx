@@ -15,7 +15,6 @@ export const Footer: FunctionComponent = () => {
   const currentYear = new Date().getFullYear();
   const showYear = config.footer.showYear;
   const showWispBranding = config.navigation.showWispBranding;
-  const rssEnabled = config.navigation.rssEnabled;
 
   return (
     <footer className="bg-background text-foreground">
@@ -75,7 +74,7 @@ export const Footer: FunctionComponent = () => {
           </div>
 
           {/* Legacy Footer Content (hidden by default, can be enabled via config) */}
-          {(showWispBranding || rssEnabled) && (
+          {showWispBranding && (
             <div className="border-t border-border mt-12 pt-8">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                 {showWispBranding && (
