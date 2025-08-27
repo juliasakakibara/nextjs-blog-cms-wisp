@@ -30,18 +30,15 @@ export async function generateMetadata(
 const Page = async (
   props: {
     params: Promise<Params>;
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   }
 ) => {
-  const searchParams = await props.searchParams;
   const params = await props.params;
 
   const {
     slug
   } = params;
 
-  const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
-  const result = await wisp.getPosts({ limit: 6, tags: [slug], page });
+  const result = await wisp.getPosts({ limit: 20, tags: [slug] });
   return (
     <>
       <Header />
