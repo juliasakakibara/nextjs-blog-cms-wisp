@@ -19,7 +19,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
 
   return (
     <section className={sectionClasses}>
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="w-full">
         {/* Profile Section */}
         <div className="mb-16 lg:mb-20">
           {/* Name Section */}
