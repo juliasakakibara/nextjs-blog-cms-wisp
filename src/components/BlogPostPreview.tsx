@@ -12,7 +12,7 @@ export const BlogPostPreview: FunctionComponent<{
 }> = ({ post }) => {
   return (
     <div className="break-words">
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={`/blog/${post.slug}`} className="hover:opacity-80 transition-opacity">
         <div className="aspect-[16/9] relative">
           <Image
             alt={post.title}
@@ -24,7 +24,7 @@ export const BlogPostPreview: FunctionComponent<{
       </Link>
       <div className="grid grid-cols-1 gap-3 md:col-span-2 mt-4">
         <h2 className="font-sans font-semibold tracking-tighter text-primary text-2xl md:text-3xl">
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+          <Link href={`/blog/${post.slug}`} className="hover:text-[#929292] transition-colors">{post.title}</Link>
         </h2>
         <div className="prose lg:prose-lg italic tracking-tighter text-muted-foreground">
           {formatDate(post.publishedAt || post.updatedAt, "dd MMMM yyyy")}
@@ -35,7 +35,7 @@ export const BlogPostPreview: FunctionComponent<{
         <div className="text-sm text-muted-foreground">
           {post.tags.map((tag) => (
             <div key={tag.id} className="mr-2 inline-block">
-              <Link href={`/tag/${tag.name}`}>#{tag.name}</Link>
+              <Link href={`/tag/${tag.name}`} className="hover:text-[#929292] transition-colors">#{tag.name}</Link>
             </div>
           ))}
         </div>
