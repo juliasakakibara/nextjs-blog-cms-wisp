@@ -44,7 +44,7 @@ const Page = async (
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
   const result = await wisp.getPosts({ limit: 6, tags: [slug], page });
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-16 sm:pt-20 lg:pt-24">
       <Header />
       <Link href="/">
         <Badge className="px-2 py-1">

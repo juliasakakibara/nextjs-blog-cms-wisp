@@ -26,7 +26,7 @@ export default async function Page() {
   const result = await wisp.getTags();
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24">
       <Header />
       <div className="mt-20 mb-12 text-center">
         <h1 className="mb-2 text-5xl font-bold">Tags</h1>
