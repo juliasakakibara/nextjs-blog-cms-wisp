@@ -18,7 +18,7 @@ const buildConfig = () => {
 
   // Navigation tokens
   const navigationTokens = {
-    menuItems: JSON.parse(process.env.NEXT_PUBLIC_MENU_ITEMS || '[{"name":"Blog","href":"/"},{"name":"About","href":"/about"}]'),
+    menuItems: JSON.parse(process.env.NEXT_PUBLIC_MENU_ITEMS || '[{"name":"Blog","href":"/"},{"name":"/feature projects","href":"#work"},{"name":"About","href":"/about"}]'),
     showWispBranding: process.env.NEXT_PUBLIC_SHOW_WISP_BRANDING !== "false",
     rssEnabled: process.env.NEXT_PUBLIC_RSS_ENABLED !== "false",
   };
