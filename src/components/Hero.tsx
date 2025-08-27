@@ -25,13 +25,14 @@ export const Hero: FunctionComponent<HeroProps> = ({
           {/* Name Section */}
           <div className="flex flex-col items-start">
             <h1 className={cn(
-              "font-bold tracking-tight",
+              "font-bold",
               "text-4xl sm:text-5xl md:text-6xl lg:text-[76px]",
               "leading-[1] lg:leading-[76px]",
-              "text-foreground"
+              "text-foreground",
+              "tracking-[-0.05em] lg:tracking-[-0.06em]"
             )}>
-              <div className="mb-2 lg:mb-3" style={{ letterSpacing: "-5px" }}>JULIA</div>
-              <div style={{ letterSpacing: "-5px" }}>SAKAKIBARA</div>
+              <div className="mb-2 lg:mb-3">JULIA</div>
+              <div>SAKAKIBARA</div>
             </h1>
           </div>
         </div>
@@ -43,15 +44,16 @@ export const Hero: FunctionComponent<HeroProps> = ({
               "text-xl sm:text-2xl md:text-3xl lg:text-[40px]",
               "leading-relaxed lg:leading-[1.3]",
               "text-foreground",
-              "font-normal"
+              "font-normal",
+              "tracking-[-0.02em] lg:tracking-[-0.03em]"
             )}>
-              <span style={{ letterSpacing: "-2.4px" }}>
+              <span>
                 Hello, I'm freelancer Designer who codes with 4+ years experience — based{" "}
               </span>
-              <span className="text-sm lg:text-base" style={{ letterSpacing: "-2.4px" }}>
+              <span className="text-sm lg:text-base">
                 (for now)
               </span>
-              <span style={{ letterSpacing: "-2.4px" }}>
+              <span>
                 {" "}in Lalala blabla, working remotely.
               </span>
             </p>
