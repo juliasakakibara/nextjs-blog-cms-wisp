@@ -21,9 +21,14 @@ const Page = async (
       <section id="work">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8 lg:mb-9">
-          <h2 className="text-2xl lg:text-[30px] font-small leading-[1.2] tracking-[-0.02em] text-foreground">
+          <h2 className="text-2xl lg:text-[30px] text-foreground">
             work.
           </h2>
+          <button className="bg-muted hover:bg-muted/80 transition-colors px-6 lg:px-7 py-3 lg:py-4 rounded-none">
+            <span className="text-sm lg:text-base font-medium leading-[1.2] tracking-[-0.01em] text-foreground">
+              Show More
+            </span>
+          </button>
         </div>
         <BlogPostsPreview posts={result.posts} />
       </section>
