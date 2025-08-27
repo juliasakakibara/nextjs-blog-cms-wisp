@@ -53,6 +53,9 @@ export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
   const menuItems: MenuItem[] = config.navigation.menuItems;
 
+  // Debug: log menu items to console
+  console.log('Menu items:', menuItems);
+
   return (
     <nav>
       <div className="hidden md:flex items-center">
