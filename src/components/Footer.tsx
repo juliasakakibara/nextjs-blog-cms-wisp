@@ -20,7 +20,7 @@ export const Footer: FunctionComponent = () => {
   const rssEnabled = config.navigation.rssEnabled;
 
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
           {/* Social Media Links */}
