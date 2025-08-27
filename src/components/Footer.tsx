@@ -28,7 +28,7 @@ export const Footer: FunctionComponent = () => {
             <div className="flex gap-6">
               <Link
                 href="https://linkedin.com"
-                className="text-foreground hover:text-muted-foreground transition-colors font-normal"
+                className="text-muted-foreground hover:text-foreground transition-colors font-normal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -36,7 +36,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://twitter.com"
-                className="text-foreground hover:text-muted-foreground transition-colors font-normal"
+                className="text-muted-foreground hover:text-foreground transition-colors font-normal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -44,7 +44,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://behance.net"
-                className="text-foreground hover:text-muted-foreground transition-colors font-normal"
+                className="text-muted-foreground hover:text-foreground transition-colors font-normal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -57,20 +57,20 @@ export const Footer: FunctionComponent = () => {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-16">
             {/* Left Section - Contact Info */}
             <div className="flex flex-col gap-1">
-              <div className="text-foreground font-normal leading-relaxed">
+              <div className="text-muted-foreground font-normal leading-relaxed">
                 +55 51 9 94991466
               </div>
-              <div className="text-foreground font-normal leading-relaxed">
+              <div className="text-muted-foreground font-normal leading-relaxed">
                 juliasakakibara@outlook.com
               </div>
             </div>
 
             {/* Right Section - Copyright */}
             <div className="flex flex-col text-left lg:text-right">
-              <div className="text-foreground font-normal leading-relaxed">
+              <div className="text-muted-foreground font-normal leading-relaxed">
                 All rights reserved,
               </div>
-              <div className="text-foreground font-normal leading-relaxed">
+              <div className="text-muted-foreground font-normal leading-relaxed">
                 Julia Sakakibara ©{currentYear}
               </div>
             </div>
@@ -94,7 +94,7 @@ export const Footer: FunctionComponent = () => {
                 <div className="flex items-center gap-2">
                   {rssEnabled && (
                     <Link href="/rss">
-                      <Button variant="ghost" className="p-2 text-foreground hover:text-muted-foreground hover:bg-accent">
+                      <Button variant="ghost" className="p-2 text-muted-foreground hover:text-foreground hover:bg-accent">
                         <Rss className="w-4 h-4" />
                       </Button>
                     </Link>
