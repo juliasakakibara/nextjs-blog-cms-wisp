@@ -1,5 +1,4 @@
 import { BlogPostsPreview } from "@/components/BlogPostPreview";
-import { BlogPostsPagination } from "@/components/BlogPostsPagination";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
@@ -29,7 +28,6 @@ const Page = async (
             </h2>
           </div>
           <BlogPostsPreview posts={result.posts} />
-          <BlogPostsPagination pagination={result.pagination} />
         </div>
       </section>
 
