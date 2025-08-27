@@ -32,7 +32,7 @@ export const Navigation: FunctionComponent = () => {
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
               className={cn(
-                "hover:text-gray-900",
+                "hover:text-gray-900 font-semibold",
                 pathname === item.href && "font-semibold"
               )}
             >
@@ -55,7 +55,7 @@ export const Navigation: FunctionComponent = () => {
                     href={item.href}
                     target={item.openInNewTab ? "_blank" : "_self"}
                     className={cn(
-                      "block py-2",
+                      "block py-2 font-semibold",
                       pathname === item.href && "font-semibold"
                     )}
                   >
