@@ -41,6 +41,17 @@ export const PostContent = ({ content }: { content: string }) => {
       iframe: ["src", "allowfullscreen", "style"],
     },
     allowedIframeHostnames: ["www.youtube.com", "www.youtube-nocookie.com"],
+    exclusiveFilter: (frame) => {
+      // Filter out "Powered by wisp" links
+      if (frame.tag === 'a' && frame.attribs?.href?.includes('wisp.blog')) {
+        return false;
+      }
+      // Filter out small tags containing "Powered by wisp"
+      if (frame.tag === 'small' && frame.text?.toLowerCase().includes('powered by wisp')) {
+        return false;
+      }
+      return true;
+    },
   });
   return (
     <div
