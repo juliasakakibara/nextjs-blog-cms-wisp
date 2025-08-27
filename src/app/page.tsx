@@ -17,9 +17,11 @@ const Page = async (
   return (
     <>
       <Header />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-16 sm:pt-20 lg:pt-24">
-        {config.hero.enabled && <Hero />}
-        <section id="work">
+
+      {config.hero.enabled && <Hero />}
+
+      <section id="work" className="w-full px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="container mx-auto">
           {/* Section Header */}
           <div className="mb-8 lg:mb-9">
             <h2 className="text-foreground">
@@ -27,9 +29,10 @@ const Page = async (
             </h2>
           </div>
           <BlogPostsPreview posts={result.posts} />
-        </section>
-        <BlogPostsPagination pagination={result.pagination} />
-      </div>
+          <BlogPostsPagination pagination={result.pagination} />
+        </div>
+      </section>
+
       <Footer />
     </>
   );
