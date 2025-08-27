@@ -72,15 +72,15 @@ const Page = async (props: { params: Promise<Params> }) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Header />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24">
-        <Header />
         <div className="max-w-prose mx-auto text-xl">
           <BlogPostContent post={result.post} />
           <RelatedPosts posts={posts} />
           <CommentSection slug={slug} />
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

@@ -44,21 +44,23 @@ const Page = async (
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
   const result = await wisp.getPosts({ limit: 6, tags: [slug], page });
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-16 sm:pt-20 lg:pt-24">
+    <>
       <Header />
-      <Link href="/">
-        <Badge className="px-2 py-1">
-          <CircleX className="inline-block w-4 h-4 mr-2" />
-          Posts tagged with <strong className="mx-2">#{slug}</strong>{" "}
-        </Badge>
-      </Link>
-      <BlogPostsPreview posts={result.posts} />
-      <BlogPostsPagination
-        pagination={result.pagination}
-        basePath={`/tag/${slug}/?page=`}
-      />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-16 sm:pt-20 lg:pt-24">
+        <Link href="/">
+          <Badge className="px-2 py-1">
+            <CircleX className="inline-block w-4 h-4 mr-2" />
+            Posts tagged with <strong className="mx-2">#{slug}</strong>{" "}
+          </Badge>
+        </Link>
+        <BlogPostsPreview posts={result.posts} />
+        <BlogPostsPagination
+          pagination={result.pagination}
+          basePath={`/tag/${slug}/?page=`}
+        />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
