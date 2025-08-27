@@ -25,7 +25,7 @@ const Page = async (
           {/* Section Header */}
           <div className="mb-8 lg:mb-9">
             <h2 className="text-foreground">
-              work.
+              /feature projects
             </h2>
           </div>
           <BlogPostsPreview posts={result.posts} />
