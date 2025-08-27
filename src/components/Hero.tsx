@@ -21,9 +21,9 @@ export const Hero: FunctionComponent<HeroProps> = ({
     <section className={sectionClasses}>
       <div className="max-w-7xl mx-auto w-full">
         {/* Profile Section */}
-        <div className="flex flex-col lg:flex-row items-start justify-start gap-6 lg:gap-10 mb-16 lg:mb-20">
+        <div className="mb-16 lg:mb-20">
           {/* Name Section */}
-          <div className="flex flex-col items-start min-w-0 lg:min-w-[500px]">
+          <div className="flex flex-col items-start">
             <h1 className={cn(
               "font-bold tracking-tight",
               "text-4xl sm:text-5xl md:text-6xl lg:text-[76px]",
@@ -34,9 +34,6 @@ export const Hero: FunctionComponent<HeroProps> = ({
               <div style={{ letterSpacing: "-5px" }}>SAKAKIBARA</div>
             </h1>
           </div>
-
-          {/* Avatar Placeholder */}
-          <div className="w-24 h-24 lg:w-[168px] lg:h-[168px] rounded-full bg-muted/20 border-2 border-muted flex-shrink-0 self-start lg:ml-auto"></div>
         </div>
 
         {/* Bio Section */}
