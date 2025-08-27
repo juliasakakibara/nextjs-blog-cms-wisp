@@ -1,3 +1,4 @@
+// app/layout.tsx
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import { cn } from "@/lib/utils";
@@ -5,6 +6,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { BlotterScripts } from "@/components/BlotterScripts";
 
 // Dynamic font loading based on config
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
 }>) {
   // Dynamic container classes - full width with no lateral margin/padding
@@ -43,6 +45,16 @@ export default function RootLayout({
   return (
     <html lang={config.layout.language}>
       <body className={containerClasses}>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <BlotterScripts />
+      </head>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
         <Providers>
           <main className="w-full">
             {children}

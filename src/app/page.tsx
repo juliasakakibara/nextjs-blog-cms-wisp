@@ -8,7 +8,6 @@ import { wisp } from "@/lib/wisp";
 const Page = async () => {
   const result = await wisp.getPosts({ limit: 20 });
   return (
-    <>
       <Header />
 
       {config.hero.enabled && <Hero />}
