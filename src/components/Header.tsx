@@ -20,17 +20,14 @@ interface MenuItem {
   openInNewTab?: boolean;
 }
 
-export const Navigation: FunctionComponent = () => {
-  const pathname = usePathname();
-
-      const useScrollDirection = () => {
+const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY < 50) {
         // Always show header when near top
         setScrollDirection("up");
@@ -41,7 +38,7 @@ export const Navigation: FunctionComponent = () => {
         // Scrolling up
         setScrollDirection("up");
       }
-      
+
       setPrevScrollY(currentScrollY);
     };
 
@@ -51,6 +48,10 @@ export const Navigation: FunctionComponent = () => {
 
   return scrollDirection;
 };
+
+export const Navigation: FunctionComponent = () => {
+  const pathname = usePathname();
+
   // Menu items configurados
   const menuItems: MenuItem[] = [
     { name: "/feature projects", href: "#work" },
