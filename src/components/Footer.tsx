@@ -28,7 +28,7 @@ export const Footer: FunctionComponent = () => {
             <div className="flex gap-6">
               <Link
                 href="https://linkedin.com"
-                className="text-white hover:text-gray-300 transition-colors font-normal"
+                className="text-foreground hover:text-muted-foreground transition-colors font-normal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -36,7 +36,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://twitter.com"
-                className="text-white hover:text-gray-300 transition-colors font-normal"
+                className="text-foreground hover:text-muted-foreground transition-colors font-normal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -44,7 +44,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://behance.net"
-                className="text-white hover:text-gray-300 transition-colors font-normal"
+                className="text-foreground hover:text-muted-foreground transition-colors font-normal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
