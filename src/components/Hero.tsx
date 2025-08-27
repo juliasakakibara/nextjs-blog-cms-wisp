@@ -18,9 +18,9 @@ export const Hero: FunctionComponent<HeroProps> = ({
 
   return (
     <section className={sectionClasses}>
-      <div className="container mx-auto w-full">
+      <div className="container mx-auto w-full flex flex-col justify-center h-full">
         {/* Profile Section */}
-        <div className="mb-16 lg:mb-20">
+        <div className="mb-8 lg:mb-12">
           {/* Name Section */}
           <div className="flex flex-col items-start">
             <h1 className={cn(
