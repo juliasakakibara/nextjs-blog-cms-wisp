@@ -21,38 +21,37 @@ export const Hero: FunctionComponent<HeroProps> = ({
     <section className={sectionClasses}>
       <div className="max-w-7xl mx-auto w-full">
         {/* Profile Section */}
-        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-24 mb-24 lg:mb-32">
+        <div className="flex flex-col lg:flex-row items-start justify-start gap-6 lg:gap-10 mb-16 lg:mb-20">
           {/* Name Section */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start min-w-0 lg:min-w-[500px]">
             <h1 className={cn(
               "font-bold tracking-tight",
-              "text-5xl sm:text-6xl md:text-7xl lg:text-[76px]",
-              "leading-[1] md:leading-[76px]",
-              "text-foreground",
-              "mb-3"
+              "text-4xl sm:text-5xl md:text-6xl lg:text-[76px]",
+              "leading-[1] lg:leading-[76px]",
+              "text-foreground"
             )}>
-              <div style={{ letterSpacing: "-5px" }}>JULIA</div>
+              <div className="mb-2 lg:mb-3" style={{ letterSpacing: "-5px" }}>JULIA</div>
               <div style={{ letterSpacing: "-5px" }}>SAKAKIBARA</div>
             </h1>
           </div>
 
           {/* Avatar Placeholder */}
-          <div className="w-32 h-32 lg:w-42 lg:h-42 rounded-full bg-muted flex-shrink-0 lg:mt-8"></div>
+          <div className="w-24 h-24 lg:w-[168px] lg:h-[168px] rounded-full bg-muted/20 border-2 border-muted flex-shrink-0 self-start lg:ml-auto"></div>
         </div>
 
         {/* Bio Section */}
-        <div className="flex justify-center lg:justify-end">
-          <div className="max-w-2xl lg:max-w-3xl">
+        <div className="flex justify-start lg:justify-end lg:pr-4">
+          <div className="max-w-full lg:max-w-[600px]">
             <p className={cn(
-              "text-2xl sm:text-3xl md:text-4xl lg:text-[40px]",
-              "leading-relaxed lg:leading-[1.2]",
+              "text-xl sm:text-2xl md:text-3xl lg:text-[40px]",
+              "leading-relaxed lg:leading-[1.3]",
               "text-foreground",
               "font-normal"
             )}>
               <span style={{ letterSpacing: "-2.4px" }}>
                 Hello, I'm freelancer Designer who codes with 4+ years experience — based{" "}
               </span>
-              <span className="text-base lg:text-lg" style={{ letterSpacing: "-2.4px" }}>
+              <span className="text-sm lg:text-base" style={{ letterSpacing: "-2.4px" }}>
                 (for now)
               </span>
               <span style={{ letterSpacing: "-2.4px" }}>
