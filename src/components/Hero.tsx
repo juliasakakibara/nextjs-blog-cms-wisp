@@ -37,7 +37,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
         </div>
 
         {/* Bio Section */}
-        <div className="flex justify-start lg:justify-end lg:pr-4">
+        <div className="flex justify-start lg:justify-end lg:pr-6">
           <div className="max-w-full lg:max-w-[600px]">
             <p className={cn(
               "text-xl sm:text-2xl md:text-3xl lg:text-[40px]",
