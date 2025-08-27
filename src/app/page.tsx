@@ -18,7 +18,9 @@ const Page = async (
     <div className="container mx-auto px-5 mb-10">
       <Header />
       {config.hero.enabled && <Hero />}
-      <BlogPostsPreview posts={result.posts} />
+      <section id="work">
+        <BlogPostsPreview posts={result.posts} />
+      </section>
       <BlogPostsPagination pagination={result.pagination} />
       <Footer />
     </div>
