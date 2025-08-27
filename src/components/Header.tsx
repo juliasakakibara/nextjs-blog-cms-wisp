@@ -54,9 +54,8 @@ export const Navigation: FunctionComponent = () => {
 
   // Menu items configurados
   const menuItems: MenuItem[] = [
-    { name: "Blog", href: "/" },
     { name: "/feature projects", href: "#work" },
-    { name: "About", href: "/about" }
+    { name: "/about", href: "/about" }
   ];
 
   return (
