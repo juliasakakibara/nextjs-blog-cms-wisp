@@ -5,14 +5,8 @@ import { Hero } from "@/components/Hero";
 import { config } from "@/config";
 import { wisp } from "@/lib/wisp";
 
-const Page = async (
-  props: {
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-  }
-) => {
-  const searchParams = await props.searchParams;
-  const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
-  const result = await wisp.getPosts({ limit: 6, page });
+const Page = async () => {
+  const result = await wisp.getPosts({ limit: 20 });
   return (
     <>
       <Header />
