@@ -11,13 +11,42 @@ import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
 interface MenuItem {
   name: string;
   href: string;
   openInNewTab?: boolean;
 }
+
+const useScrollDirection = () => {
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        // Always show header when near top
+        setScrollDirection("up");
+      } else if (currentScrollY > prevScrollY) {
+        // Scrolling down
+        setScrollDirection("down");
+      } else if (currentScrollY < prevScrollY) {
+        // Scrolling up
+        setScrollDirection("up");
+      }
+      
+      setPrevScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollY]);
+
+  return scrollDirection;
+};
 
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
@@ -72,11 +101,16 @@ export const Navigation: FunctionComponent = () => {
 };
 
 export const Header: FunctionComponent = () => {
+  const scrollDirection = useScrollDirection();
+  const isVisible = scrollDirection !== "down";
+
   const headerClasses = cn(
-    "flex items-center justify-between",
+    "fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm",
+    "flex items-center justify-between px-5 transition-transform duration-300 ease-in-out",
     config.header.marginTop.mobile,
     `md:${config.header.marginTop.desktop}`,
-    config.header.marginBottom
+    config.header.marginBottom,
+    isVisible ? "transform translate-y-0" : "transform -translate-y-full"
   );
 
   const titleClasses = cn(
