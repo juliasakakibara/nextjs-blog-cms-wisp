@@ -12,6 +12,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
 }) => {
   const sectionClasses = cn(
     "relative w-full flex flex-col items-center justify-center",
+    "px-4 sm:px-6 lg:px-8",
     config.hero.paddingY.mobile,
     `lg:${config.hero.paddingY.desktop}`,
     className
@@ -19,7 +20,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
 
   return (
     <section className={sectionClasses}>
-      <div className="w-full">
+      <div className="container mx-auto w-full">
         {/* Profile Section */}
         <div className="mb-16 lg:mb-20">
           {/* Name Section */}
