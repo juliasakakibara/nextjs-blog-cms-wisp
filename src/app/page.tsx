@@ -29,8 +29,8 @@ const Page = async (
           <BlogPostsPreview posts={result.posts} />
         </section>
         <BlogPostsPagination pagination={result.pagination} />
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };
