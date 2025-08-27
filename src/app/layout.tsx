@@ -24,8 +24,6 @@ export const metadata: Metadata = {
     images: [
       signOgImageUrl({
         title: config.blog.name,
-        width: config.seo.ogImageWidth,
-        height: config.seo.ogImageHeight,
       }),
     ],
   },
@@ -35,8 +33,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}>) {
-  // Dynamic container classes based on configuration
+}) {
   const containerClasses = cn(
     "min-h-screen bg-background font-sans antialiased m-auto",
     `max-w-${config.layout.maxWidth}`,
@@ -44,18 +41,11 @@ export default function RootLayout({
   );
 
   return (
-    <html lang={config.layout.language}>
-      <body className={containerClasses}>
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang={config.layout.language} suppressHydrationWarning>
       <head>
         <BlotterScripts />
       </head>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
+      <body className={containerClasses}>
         <Providers>
           <main style={{ padding: config.layout.containerPadding }}>
             {children}
