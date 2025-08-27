@@ -40,7 +40,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
         <div className="flex justify-start lg:justify-end">
           <div className="max-w-full lg:max-w-[600px]">
             <p className={cn(
-              "text-xl sm:text-2xl md:text-3xl lg:text-[40px]",
+              "text-[18px] sm:text-[22px] md:text-[27px] lg:text-[36px]",
               "leading-relaxed lg:leading-[1.3]",
               "text-foreground",
               "font-normal",
