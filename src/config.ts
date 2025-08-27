@@ -25,8 +25,6 @@ const buildConfig = () => {
 
   // Content tokens
   const contentTokens = {
-    postsPerPage: parseInt(process.env.NEXT_PUBLIC_POSTS_PER_PAGE || "10"),
-    paginationSiblings: parseInt(process.env.NEXT_PUBLIC_PAGINATION_SIBLINGS || "2"),
     placeholderImage: process.env.NEXT_PUBLIC_PLACEHOLDER_IMAGE || "/images/placeholder.webp",
     loadingText: process.env.NEXT_PUBLIC_LOADING_TEXT || "Loading...",
   };
