@@ -59,7 +59,6 @@ npm run dev
 | Token | Padrão | Descrição |
 |-------|--------|-----------|
 | `NEXT_PUBLIC_MENU_ITEMS` | `[{"name":"Blog","href":"/"},{"name":"About","href":"/about"}]` | Itens do menu (JSON) |
-| `NEXT_PUBLIC_SHOW_WISP_BRANDING` | "true" | Mostrar "powered by wisp" |
 | `NEXT_PUBLIC_RSS_ENABLED` | "true" | Habilitar link RSS |
 
 ### 📄 Conteúdo
