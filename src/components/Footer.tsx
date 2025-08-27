@@ -7,7 +7,6 @@ import { DarkModeToggle } from "./DarkModeToggle";
 export const Footer: FunctionComponent = () => {
   const currentYear = new Date().getFullYear();
   const showYear = config.footer.showYear;
-  const showWispBranding = config.navigation.showWispBranding;
 
   return (
     <footer className="bg-black text-white">
