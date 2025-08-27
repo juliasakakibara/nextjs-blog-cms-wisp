@@ -73,13 +73,15 @@ const Page = async (props: { params: Promise<Params> }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24">
-        <div className="max-w-prose mx-auto text-xl">
-          <BlogPostContent post={result.post} />
-          <RelatedPosts posts={posts} />
-          <CommentSection slug={slug} />
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 lg:py-20 pt-32 sm:pt-36 lg:pt-40">
+        <div className="container mx-auto">
+          <div className="max-w-prose mx-auto text-xl">
+            <BlogPostContent post={result.post} />
+            <RelatedPosts posts={posts} />
+            <CommentSection slug={slug} />
+          </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </>
   );

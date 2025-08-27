@@ -46,19 +46,21 @@ const Page = async (
   return (
     <>
       <Header />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-16 sm:pt-20 lg:pt-24">
-        <Link href="/">
-          <Badge className="px-2 py-1">
-            <CircleX className="inline-block w-4 h-4 mr-2" />
-            Posts tagged with <strong className="mx-2">#{slug}</strong>{" "}
-          </Badge>
-        </Link>
-        <BlogPostsPreview posts={result.posts} />
-        <BlogPostsPagination
-          pagination={result.pagination}
-          basePath={`/tag/${slug}/?page=`}
-        />
-      </div>
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 lg:py-20 pt-32 sm:pt-36 lg:pt-40">
+        <div className="container mx-auto">
+          <Link href="/">
+            <Badge className="px-2 py-1">
+              <CircleX className="inline-block w-4 h-4 mr-2" />
+              Posts tagged with <strong className="mx-2">#{slug}</strong>{" "}
+            </Badge>
+          </Link>
+          <BlogPostsPreview posts={result.posts} />
+          <BlogPostsPagination
+            pagination={result.pagination}
+            basePath={`/tag/${slug}/?page=`}
+          />
+        </div>
+      </section>
       <Footer />
     </>
   );

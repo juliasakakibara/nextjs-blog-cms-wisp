@@ -39,11 +39,13 @@ const Page = async () => {
   return (
     <>
       <Header />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24">
-        <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
-          <Markdown>{content}</Markdown>
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 lg:py-20 pt-32 sm:pt-36 lg:pt-40">
+        <div className="container mx-auto">
+          <div className="prose lg:prose-lg dark:prose-invert m-auto blog-content">
+            <Markdown>{content}</Markdown>
+          </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </>
   );
