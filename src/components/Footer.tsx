@@ -37,7 +37,7 @@ export const Footer: FunctionComponent = () => {
             <div className="flex flex-col gap-6 items-end">
               <Link
                 href="https://linkedin.com"
-                className="text-white hover:text-gray-300 transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
+                className="text-white hover:text-[#929292] transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -45,7 +45,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://twitter.com"
-                className="text-white hover:text-gray-300 transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
+                className="text-white hover:text-[#929292] transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -53,7 +53,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://behance.net"
-                className="text-white hover:text-gray-300 transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
+                className="text-white hover:text-[#929292] transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
