@@ -92,13 +92,6 @@ export const Footer: FunctionComponent = () => {
                 )}
 
                 <div className="flex items-center gap-2">
-                  {rssEnabled && (
-                    <Link href="/rss">
-                      <Button variant="ghost" className="p-2 text-muted-foreground hover:text-foreground hover:bg-accent">
-                        <Rss className="w-4 h-4" />
-                      </Button>
-                    </Link>
-                  )}
                   <DarkModeToggle />
                 </div>
               </div>
