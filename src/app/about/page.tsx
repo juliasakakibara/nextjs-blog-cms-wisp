@@ -20,13 +20,13 @@ Mas se curte experimentar, se sujar, rir do absurdo e fazer do erro um material 
 export async function generateMetadata() {
   return {
     title: "About Me",
-    description: "Learn more about Samantha and her travel adventures",
+    description: "More about Julia Sakakibara and her work",
     openGraph: {
       title: "About Me",
-      description: "Learn more about Samantha and her travel adventures",
+      description: "More about Julia Sakakibara and her work",
       images: [
         signOgImageUrl({
-          title: "Samantha",
+          title: "Julia Sakakibara",
           label: "About Me",
           brand: config.blog.name,
         }),
