@@ -34,10 +34,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Dynamic container classes based on configuration
+  // Dynamic container classes - full width with no lateral margin/padding
   const containerClasses = cn(
-    "min-h-screen bg-background font-sans antialiased m-auto",
-    `max-w-${config.layout.maxWidth}`,
+    "min-h-screen bg-background font-sans antialiased w-full",
     fontSans.variable
   );
 
@@ -45,7 +44,7 @@ export default function RootLayout({
     <html lang={config.layout.language}>
       <body className={containerClasses}>
         <Providers>
-          <main>
+          <main className="w-full">
             {children}
           </main>
         </Providers>
