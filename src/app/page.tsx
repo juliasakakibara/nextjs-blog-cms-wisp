@@ -17,7 +17,7 @@ const Page = async () => {
         <div className="container mx-auto">
           {/* Section Header */}
           <div className="mb-8 lg:mb-9">
-            <h2 className="text-foreground">
+            <h2 className="text-foreground text-[23px] sm:text-[28px] md:text-[35px] lg:text-[41px] font-semibold">
               /feature projects
             </h2>
           </div>
