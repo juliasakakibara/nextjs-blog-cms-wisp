@@ -3,13 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
     "dev": "next dev",
     "build": "next build",
-=======
-    "dev": "npm install --legacy-peer-deps && next dev --turbopack",
-    "build": "npm install --legacy-peer-deps && next build",
->>>>>>> refs/remotes/origin/ai_master_5d22654bc7d6
     "start": "next start",
     "lint": "next lint",
     "vercel-build": "npm install --legacy-peer-deps && next build"
