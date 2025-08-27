@@ -17,7 +17,7 @@ const Page = async (
   return (
     <>
       <Header />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-20 md:pt-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-16 sm:pt-20 lg:pt-24">
         {config.hero.enabled && <Hero />}
         <section id="work">
           {/* Section Header */}
