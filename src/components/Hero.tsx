@@ -13,6 +13,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
   const sectionClasses = cn(
     "relative w-full flex flex-col items-center justify-center",
     "px-4 sm:px-6 lg:px-8",
+    "pt-16 sm:pt-20 lg:pt-24", // Padding-top para compensar altura do header
     config.hero.paddingY.mobile,
     `lg:${config.hero.paddingY.desktop}`,
     className
