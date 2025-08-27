@@ -26,9 +26,6 @@ export const BlogPostPreview: FunctionComponent<{
         <h2 className="font-sans font-semibold tracking-tighter text-primary text-2xl md:text-3xl">
           <Link href={`/blog/${post.slug}`} className="hover:text-[#929292] transition-colors">{post.title}</Link>
         </h2>
-        <div className="prose lg:prose-lg italic tracking-tighter text-muted-foreground">
-          {formatDate(post.publishedAt || post.updatedAt, "dd MMMM yyyy")}
-        </div>
         <div className="prose lg:prose-lg leading-relaxed md:text-lg line-clamp-4 text-muted-foreground">
           {post.description}
         </div>
