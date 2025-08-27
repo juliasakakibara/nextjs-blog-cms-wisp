@@ -21,7 +21,7 @@ const Page = async (
       <section id="work">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8 lg:mb-9">
-          <h2 className="text-2xl lg:text-[30px] font-normal leading-[1.2] tracking-[-0.02em] text-foreground">
+          <h2 className="text-2xl lg:text-[30px] font-small leading-[1.2] tracking-[-0.02em] text-foreground">
             work.
           </h2>
         </div>
