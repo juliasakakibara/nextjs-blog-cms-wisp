@@ -15,7 +15,7 @@ export const RelatedPosts: FunctionComponent<{
   }
 
   return (
-    <div className="my-8">
+    <div className="mb-8 pt-24">
       <div className="mb-6 text-lg font-semibold tracking-tight">
         Related Posts
       </div>
