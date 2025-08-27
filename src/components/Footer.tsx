@@ -78,13 +78,13 @@ export const Footer: FunctionComponent = () => {
 
           {/* Legacy Footer Content (hidden by default, can be enabled via config) */}
           {(showWispBranding || rssEnabled) && (
-            <div className="border-t border-gray-800 mt-12 pt-8">
+            <div className="border-t border-border mt-12 pt-8">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                 {showWispBranding && (
-                  <div className="text-xs text-gray-400">
+                  <div className="text-xs text-muted-foreground">
                     <Link
                       href={`https://wisp.blog/?utm_source=next-js-template&utm_medium=web&utm_campaign=${config.baseUrl}`}
-                      className="hover:text-gray-300 transition-colors"
+                      className="hover:text-foreground transition-colors"
                     >
                       Designed & Developed by me :)
                     </Link>
@@ -94,7 +94,7 @@ export const Footer: FunctionComponent = () => {
                 <div className="flex items-center gap-2">
                   {rssEnabled && (
                     <Link href="/rss">
-                      <Button variant="ghost" className="p-2 text-white hover:text-gray-300 hover:bg-gray-800">
+                      <Button variant="ghost" className="p-2 text-foreground hover:text-muted-foreground hover:bg-accent">
                         <Rss className="w-4 h-4" />
                       </Button>
                     </Link>
