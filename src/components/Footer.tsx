@@ -1,7 +1,6 @@
 "use client";
 import { config } from "@/config";
 import { cn } from "@/lib/utils";
-import { Rss } from "lucide-react";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import { DarkModeToggle } from "./DarkModeToggle";
