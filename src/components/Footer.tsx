@@ -56,24 +56,12 @@ export const Footer: FunctionComponent = () => {
           {/* Footer Content */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-16">
             {/* Left Section - Contact Info */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-40">
-              <div className="flex flex-col gap-1">
-                <div className="text-white font-normal leading-relaxed">
-                  +55 51 9 94991466
-                </div>
-                <div className="text-white font-normal leading-relaxed">
-                  juliasakakibara@outlook.com
-                </div>
+            <div className="flex flex-col gap-1">
+              <div className="text-white font-normal leading-relaxed">
+                +55 51 9 94991466
               </div>
-
-              {/* Designed & Developed */}
-              <div className="flex flex-col">
-                <div className="text-white font-normal leading-relaxed">
-                  Designed & Developed
-                </div>
-                <div className="text-white font-normal leading-relaxed">
-                  by me :)
-                </div>
+              <div className="text-white font-normal leading-relaxed">
+                juliasakakibara@outlook.com
               </div>
             </div>
 
