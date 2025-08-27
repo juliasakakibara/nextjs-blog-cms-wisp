@@ -10,26 +10,34 @@ export const Footer: FunctionComponent = () => {
   const showWispBranding = config.navigation.showWispBranding;
 
   return (
-    <footer className="bg-background text-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto">
-          {/* Footer Content */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-16">
+    <footer className="bg-black text-white">
+      <div className="w-full max-w-none px-20 py-20">
+        <div className="flex flex-col gap-10">
+          {/* Main Footer Content */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-16 pt-[88px]">
             {/* Left Section - Contact Info */}
-            <div className="flex flex-col gap-1">
-              <div className="text-muted-foreground font-normal leading-relaxed">
-                +55 51 9 94991466
+            <div className="flex flex-col gap-4 max-w-[487px]">
+              {/* Get in touch header */}
+              <div className="text-white text-[32px] font-normal leading-[44px] tracking-[-2.4px]">
+                Get in touch:
               </div>
-              <div className="text-muted-foreground font-normal leading-relaxed">
-                juliasakakibara@outlook.com
+
+              {/* Contact details */}
+              <div className="flex flex-col gap-2">
+                <div className="text-white text-[40px] font-bold leading-[44px] tracking-[-2.4px]">
+                  +55 51 9 94991466
+                </div>
+                <div className="text-white text-[40px] font-bold leading-[44px] tracking-[-2.4px]">
+                  juliasakakibara@outlook.com
+                </div>
               </div>
             </div>
 
             {/* Right Section - Social Links */}
-            <div className="flex gap-6">
+            <div className="flex flex-col gap-6 items-end">
               <Link
                 href="https://linkedin.com"
-                className="text-muted-foreground hover:text-foreground transition-colors font-normal"
+                className="text-white hover:text-gray-300 transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -37,7 +45,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://twitter.com"
-                className="text-muted-foreground hover:text-foreground transition-colors font-normal"
+                className="text-white hover:text-gray-300 transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -45,7 +53,7 @@ export const Footer: FunctionComponent = () => {
               </Link>
               <Link
                 href="https://behance.net"
-                className="text-muted-foreground hover:text-foreground transition-colors font-normal"
+                className="text-white hover:text-gray-300 transition-colors text-base font-normal leading-[19.2px] tracking-[-0.64px]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -54,22 +62,18 @@ export const Footer: FunctionComponent = () => {
             </div>
           </div>
 
-          {/* Legacy Footer Content (hidden by default, can be enabled via config) */}
-          {showWispBranding && (
-            <div className="border-t border-border mt-12 pt-8">
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-                {showWispBranding && (
-                  <div className="text-xs text-muted-foreground">
-                    Designed & Developed by me :)
-                  </div>
-                )}
+          {/* Divider */}
+          <div className="w-full h-px bg-gray-500"></div>
 
-                <div className="flex items-center gap-2">
-                  <DarkModeToggle />
-                </div>
-              </div>
+          {/* Bottom Section */}
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
+            <div className="text-[#C3C3C3] text-base font-normal leading-[19.2px] tracking-[-0.64px]">
+              Designed & Developed by me :)
             </div>
-          )}
+            <div className="flex items-center">
+              <DarkModeToggle />
+            </div>
+          </div>
         </div>
       </div>
     </footer>
