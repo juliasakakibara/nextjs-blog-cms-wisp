@@ -11,7 +11,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
   className,
 }) => {
   const sectionClasses = cn(
-    "relative w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-16",
+    "relative w-full flex flex-col items-center justify-center",
     config.hero.paddingY.mobile,
     `lg:${config.hero.paddingY.desktop}`,
     className
