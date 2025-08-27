@@ -51,10 +51,17 @@ const useScrollDirection = () => {
 
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
-  const menuItems: MenuItem[] = config.navigation.menuItems;
+
+  // Hardcode temporário para debug
+  const menuItems: MenuItem[] = [
+    { name: "Blog", href: "/" },
+    { name: "/feature projects", href: "#work" },
+    { name: "About", href: "/about" }
+  ];
 
   // Debug: log menu items to console
-  console.log('Menu items:', menuItems);
+  console.log('Menu items (hardcoded):', menuItems);
+  console.log('Config menu items:', config.navigation.menuItems);
 
   return (
     <nav>
