@@ -21,7 +21,7 @@ cp .env.template .env.local
 
 2. Configure as variáveis obrigatórias:
 ```env
-NEXT_PUBLIC_BLOG_ID=seu-blog-id-do-wisp
+NEXT_PUBLIC_BLOG_ID=8f050144-c250-4342-b909-00d1febf9138
 ```
 
 3. Personalize os tokens conforme sua necessidade.
@@ -59,7 +59,6 @@ npm run dev
 | Token | Padrão | Descrição |
 |-------|--------|-----------|
 | `NEXT_PUBLIC_MENU_ITEMS` | `[{"name":"Blog","href":"/"},{"name":"About","href":"/about"}]` | Itens do menu (JSON) |
-| `NEXT_PUBLIC_SHOW_WISP_BRANDING` | "true" | Mostrar "powered by wisp" |
 | `NEXT_PUBLIC_RSS_ENABLED` | "true" | Habilitar link RSS |
 
 ### 📄 Conteúdo
@@ -124,7 +123,6 @@ NEXT_DEFAULT_METADATA_DEFAULT_TITLE=TechCorp - Insights and Innovation
 NEXT_PUBLIC_BLOG_DESCRIPTION=Latest insights from our technology experts
 NEXT_PUBLIC_MAX_WIDTH=4xl
 NEXT_PUBLIC_HEADER_TITLE_SIZE_DESKTOP=text-5xl
-NEXT_PUBLIC_SHOW_WISP_BRANDING=false
 ```
 
 ### Blog Pessoal Minimalista
@@ -160,7 +158,6 @@ NEXT_DEFAULT_METADATA_DEFAULT_TITLE=TechVision - Innovation & Insights
 NEXT_PUBLIC_BLOG_DESCRIPTION=Leading insights on technology trends and startup culture
 NEXT_PUBLIC_HERO_TITLE=Building Tomorrow.
 NEXT_PUBLIC_HERO_SUBTITLE=We explore cutting-edge technologies and share insights that drive innovation, helping entrepreneurs and developers stay ahead of the curve.
-NEXT_PUBLIC_SHOW_WISP_BRANDING=false
 ```
 
 ## 🔧 Customização Avançada

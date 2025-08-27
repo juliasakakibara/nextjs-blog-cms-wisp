@@ -4,7 +4,12 @@ import Link from "next/link";
 import sanitize, { defaults } from "sanitize-html";
 
 export const PostContent = ({ content }: { content: string }) => {
-  const sanitizedContent = sanitize(content, {
+  // Remove "Powered by wisp" content before sanitization
+  const filteredContent = content
+    .replace(/<small[^>]*>.*?powered by wisp.*?<\/small>/gi, '')
+    .replace(/<a[^>]*wisp\.blog[^>]*>.*?<\/a>/gi, '');
+
+  const sanitizedContent = sanitize(filteredContent, {
     allowedTags: [
       "b",
       "br",
@@ -69,11 +74,6 @@ export const BlogPostContent = ({ post }: { post: GetPostResult["post"] }) => {
               #{tag.name}
             </Link>
           ))}
-        </div>
-        <div className="text-sm opacity-40 mt-4">
-          {Intl.DateTimeFormat("en-US").format(
-            new Date(publishedAt || createdAt)
-          )}
         </div>
       </div>
     </div>

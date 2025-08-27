@@ -19,14 +19,11 @@ const buildConfig = () => {
   // Navigation tokens
   const navigationTokens = {
     menuItems: JSON.parse(process.env.NEXT_PUBLIC_MENU_ITEMS || '[{"name":"Blog","href":"/"},{"name":"About","href":"/about"}]'),
-    showWispBranding: process.env.NEXT_PUBLIC_SHOW_WISP_BRANDING !== "false",
     rssEnabled: process.env.NEXT_PUBLIC_RSS_ENABLED !== "false",
   };
 
   // Content tokens
   const contentTokens = {
-    postsPerPage: parseInt(process.env.NEXT_PUBLIC_POSTS_PER_PAGE || "10"),
-    paginationSiblings: parseInt(process.env.NEXT_PUBLIC_PAGINATION_SIBLINGS || "2"),
     placeholderImage: process.env.NEXT_PUBLIC_PLACEHOLDER_IMAGE || "/images/placeholder.webp",
     loadingText: process.env.NEXT_PUBLIC_LOADING_TEXT || "Loading...",
   };
