@@ -98,7 +98,7 @@ export const Footer: FunctionComponent = () => {
                       href={`https://wisp.blog/?utm_source=next-js-template&utm_medium=web&utm_campaign=${config.baseUrl}`}
                       className="hover:text-gray-300 transition-colors"
                     >
-                      Blog powered by wisp
+                      Designed & Developed by me :)
                     </Link>
                   </div>
                 )}
