@@ -67,7 +67,7 @@ export const Navigation: FunctionComponent = () => {
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
               className={cn(
-                "hover:text-gray-900 font-semibold",
+                "hover:text-[#929292] font-semibold",
                 pathname === item.href && "font-semibold"
               )}
             >
