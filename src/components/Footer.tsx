@@ -13,8 +13,19 @@ export const Footer: FunctionComponent = () => {
     <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
-          {/* Social Media Links */}
-          <div className="flex justify-end mb-16 lg:mb-20">
+          {/* Footer Content */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-16">
+            {/* Left Section - Contact Info */}
+            <div className="flex flex-col gap-1">
+              <div className="text-muted-foreground font-normal leading-relaxed">
+                +55 51 9 94991466
+              </div>
+              <div className="text-muted-foreground font-normal leading-relaxed">
+                juliasakakibara@outlook.com
+              </div>
+            </div>
+
+            {/* Right Section - Social Links */}
             <div className="flex gap-6">
               <Link
                 href="https://linkedin.com"
@@ -40,29 +51,6 @@ export const Footer: FunctionComponent = () => {
               >
                 Behance
               </Link>
-            </div>
-          </div>
-
-          {/* Footer Content */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-16">
-            {/* Left Section - Contact Info */}
-            <div className="flex flex-col gap-1">
-              <div className="text-muted-foreground font-normal leading-relaxed">
-                +55 51 9 94991466
-              </div>
-              <div className="text-muted-foreground font-normal leading-relaxed">
-                juliasakakibara@outlook.com
-              </div>
-            </div>
-
-            {/* Right Section - Copyright */}
-            <div className="flex flex-col text-left lg:text-right">
-              <div className="text-muted-foreground font-normal leading-relaxed">
-                All rights reserved,
-              </div>
-              <div className="text-muted-foreground font-normal leading-relaxed">
-                Julia Sakakibara ©{currentYear}
-              </div>
             </div>
           </div>
 
