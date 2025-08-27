@@ -4,6 +4,7 @@ import {
   SheetContent,
   SheetDescription,
   SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { config } from "@/config";
@@ -77,6 +78,7 @@ export const Navigation: FunctionComponent = () => {
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <SheetDescription>
                 {menuItems.map((item) => (
                   <a
