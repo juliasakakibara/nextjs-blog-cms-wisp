@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import { DarkModeToggle } from "./DarkModeToggle";
-import { Button } from "./ui/button";
 
 export const Footer: FunctionComponent = () => {
   const footerClasses = cn(
