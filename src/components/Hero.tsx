@@ -35,6 +35,10 @@ export const Hero: FunctionComponent<HeroProps> = ({
             </h1>
           </div>
 
+          {/* Avatar Placeholder */}
+          <div className="w-24 h-24 lg:w-[168px] lg:h-[168px] rounded-full bg-muted/20 border-2 border-muted flex-shrink-0 self-start lg:ml-auto"></div>
+        </div>
+
         {/* Bio Section */}
         <div className="flex justify-start lg:justify-end lg:pr-4">
           <div className="max-w-full lg:max-w-[600px]">
@@ -48,7 +52,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
                 Hello, I'm freelancer Designer who codes with 4+ years experience — based{" "}
               </span>
               <span className="text-sm lg:text-base" style={{ letterSpacing: "-2.4px" }}>
-                (for  now)
+                (for now)
               </span>
               <span style={{ letterSpacing: "-2.4px" }}>
                 {" "}in Lalala blabla, working remotely.
