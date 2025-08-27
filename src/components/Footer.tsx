@@ -6,12 +6,6 @@ import { FunctionComponent } from "react";
 import { DarkModeToggle } from "./DarkModeToggle";
 
 export const Footer: FunctionComponent = () => {
-  const footerClasses = cn(
-    config.footer.marginTop.mobile,
-    `md:${config.footer.marginTop.desktop}`,
-    config.footer.marginBottom
-  );
-
   const currentYear = new Date().getFullYear();
   const showYear = config.footer.showYear;
   const showWispBranding = config.navigation.showWispBranding;
